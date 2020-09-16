@@ -43,10 +43,6 @@ export class PenguinComponent implements OnInit {
   addPenguin() {
     this.penguinForm.age = Number(this.penguinForm.age)
     this.penguinForm.name = String(this.penguinForm.name)
-    console.log('LOG:\t' + this.penguinForm.age);
-    console.log('LOG:\t' + typeof this.penguinForm.age);
-    console.log('LOG:\t' + this.penguinForm.name);
-    console.log('LOG:\t' + typeof this.penguinForm.name);
     this.penguinService.addPenguin(this.penguinForm);
     this.getPenguins();
   }

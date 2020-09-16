@@ -10,7 +10,6 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { SigninComponent } from './signin/signin.component';
 
 import { HttpClientModule } from '@angular/common/http';
-import { DatatableComponent } from './datatable/datatable.component';
 
 @NgModule({
   declarations: [
@@ -18,8 +17,7 @@ import { DatatableComponent } from './datatable/datatable.component';
     PenguinComponent,
     HomeComponent,
     PagenotfoundComponent,
-    SigninComponent,
-    DatatableComponent
+    SigninComponent
   ],
   imports: [
     BrowserModule,
