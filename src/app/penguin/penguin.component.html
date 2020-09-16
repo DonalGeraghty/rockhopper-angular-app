@@ -1,0 +1,35 @@
+<div class="container">
+    <!-- inputs -->
+    <div class="row">
+        <form class="form-inline" #form="ngForm">
+            <label class="sr-only" for="inlineFormInputName2">Name</label>
+            <input type="text" class="form-control mb-2 mr-sm-2" id="age" name="age" [(ngModel)]="penguinForm.age">
+            <input type="text" class="form-control mb-2 mr-sm-2" id="name" name="name" [(ngModel)]="penguinForm.name" />
+            <button type="submit" (click)="addPenguin()" class="btn btn-primary mb-2">Add</button>
+        </form>
+    </div>
+
+    <!-- LAYOUT -->
+    <h1>TABLE</h1>
+    <div class="row">
+        <table class="table table-bordered table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let penguin of penguinList; let i = index;">
+                    <td>{{penguin.id}}</td>
+                    <td>{{penguin.age}}</td>
+                    <td>{{penguin.name}}</td>
+                    <td><button type="button" (click)="deletePenguin(penguin.id)"
+                            class="btn btn-primary">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

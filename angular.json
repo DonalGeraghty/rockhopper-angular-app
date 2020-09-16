@@ -88,6 +88,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -119,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "rockhopper-app"
+    }
+  },
+  "defaultProject": "rockhopper-app",
+  "cli": {
+    "analytics": "58efea91-aed1-4615-99bf-5c346c6bcf58"
+  }
 }
