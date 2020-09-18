@@ -12,14 +12,14 @@ export class PenguinComponent implements OnInit {
   penguin: Penguin;
 
   penguinForm: Penguin = {
-    age: 7,
-    name: 'Pingu',
+    Age: 7,
+    Name: 'Pingu',
   };
 
   updateData: Penguin = {
-    id: 1,
-    age: 5,
-    name: 'Pinga',
+    Id: 1,
+    Age: 5,
+    Name: 'Pinga',
   };
 
   constructor(private penguinService: PenguinService) {}
@@ -41,8 +41,8 @@ export class PenguinComponent implements OnInit {
   }
 
   addPenguin() {
-    this.penguinForm.age = Number(this.penguinForm.age)
-    this.penguinForm.name = String(this.penguinForm.name)
+    this.penguinForm.Age = Number(this.penguinForm.Age);
+    this.penguinForm.Name = String(this.penguinForm.Name);
     this.penguinService.addPenguin(this.penguinForm);
     this.getPenguins();
   }
@@ -57,7 +57,11 @@ export class PenguinComponent implements OnInit {
     this.getPenguins();
   }
 
-  refresh(): void {
-    window.location.reload();
+  test() {
+    console.log('Component LOG');
+    this.penguinService
+      .getTest()
+      .subscribe((data: Penguin) => (this.penguin = data));
+    console.log('DATA: ' + this.penguin);
   }
 }

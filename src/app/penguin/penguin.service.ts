@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class PenguinService {
-  url = 'https://localhost:44315/api';
+  url = 'http://localhost:8181/api';
 
   constructor(private http: HttpClient) {}
 
@@ -39,5 +39,10 @@ export class PenguinService {
     this.http.delete(this.url + endPoints).subscribe((data) => {
       console.log(data);
     });
+  }
+
+  public getTest(){
+    console.log("Service LOG")
+    return this.http.get("http://localhost:9091/api/penguins");
   }
 }

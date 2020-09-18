@@ -3,8 +3,8 @@
     <div class="row">
         <form class="form-inline" #form="ngForm">
             <label class="sr-only" for="inlineFormInputName2">Name</label>
-            <input type="text" class="form-control mb-2 mr-sm-2" id="age" name="age" [(ngModel)]="penguinForm.age">
-            <input type="text" class="form-control mb-2 mr-sm-2" id="name" name="name" [(ngModel)]="penguinForm.name" />
+            <input type="text" class="form-control mb-2 mr-sm-2" id="age" name="Age" [(ngModel)]="penguinForm.Age">
+            <input type="text" class="form-control mb-2 mr-sm-2" id="name" name="Name" [(ngModel)]="penguinForm.Name" />
             <button type="submit" (click)="addPenguin()" class="btn btn-primary mb-2">Add</button>
         </form>
     </div>
@@ -33,3 +33,5 @@
         </table>
     </div>
 </div>
+
+<button type="button" (click)="test()" class="btn btn-primary">TEST</button>
