@@ -5,17 +5,16 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class PenguinService {
-  url = 'http://localhost:8181/api';
+  url = 'http://localhost:9091/api';
 
   constructor(private http: HttpClient) {}
 
   public getPenguins() {
-    let endPoints = '/penguins/';
+    let endPoints = '/penguins';
     return this.http.get(this.url + endPoints);
   }
 
-  public getPenguinById() {
-    let id: number = 1;
+  public getPenguinById(id: number) {
     let endPoints = '/penguins/' + id;
     return this.http.get(this.url + endPoints);
   }
@@ -27,22 +26,17 @@ export class PenguinService {
     });
   }
 
-  public updatePenguin(penguinData: Object) {
-    let endPoints = '/penguins/1';
+  public updatePenguin(id: number, penguinData: Object) {
+    let endPoints = '/penguins/' + id;
     this.http.put(this.url + endPoints, penguinData).subscribe((data) => {
       console.log(data);
     });
   }
 
   public deletePenguin(id: number) {
-    let endPoints = '/penguins/'+id;
+    let endPoints = '/penguins/' + id;
     this.http.delete(this.url + endPoints).subscribe((data) => {
       console.log(data);
     });
-  }
-
-  public getTest(){
-    console.log("Service LOG")
-    return this.http.get("http://localhost:9091/api/penguins");
   }
 }

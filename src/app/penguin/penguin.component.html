@@ -23,15 +23,13 @@
             </thead>
             <tbody>
                 <tr *ngFor="let penguin of penguinList; let i = index;">
-                    <td>{{penguin.id}}</td>
-                    <td>{{penguin.age}}</td>
-                    <td>{{penguin.name}}</td>
-                    <td><button type="button" (click)="deletePenguin(penguin.id)"
+                    <td>{{penguin.Id}}</td>
+                    <td>{{penguin.Age}}</td>
+                    <td>{{penguin.Name}}</td>
+                    <td><button type="button" (click)="deletePenguin(penguin.Id)"
                             class="btn btn-primary">Delete</button></td>
                 </tr>
             </tbody>
         </table>
     </div>
 </div>
-
-<button type="button" (click)="test()" class="btn btn-primary">TEST</button>
